@@ -6,12 +6,10 @@ public class SwordCombat : Health
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
-            return;
+            Destroy(collision.gameObject);
+            health = 3;
         }
-
-        Destroy(collision.gameObject);
-        health += 1;
     }
 }
