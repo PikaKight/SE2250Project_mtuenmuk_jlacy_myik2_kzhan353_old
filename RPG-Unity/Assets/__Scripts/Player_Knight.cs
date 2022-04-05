@@ -9,7 +9,7 @@ public class Player_Knight : MonoBehaviour
     //creating the dashLayerMask
     [SerializeField] private LayerMask dashLayerMask;
     //dash variables (new)
-    private const float MOVE_SPEED = 1f;
+    private const float MOVE_SPEED = 4.5f;
 
 
 
@@ -35,7 +35,7 @@ public class Player_Knight : MonoBehaviour
 
     //Dash Movement - move into seperate class for diff characters if can
     private float dashCounter;
-    public float dashSpeed;
+    //public float dashSpeed;
 
     public float moveSpeed;
 
@@ -117,7 +117,7 @@ public class Player_Knight : MonoBehaviour
 
         if (isDashButtonDown)
         {
-            float dashAmount = 0.2f;
+            float dashAmount = 1.25f;
             Vector3 dashPosition = transform.position + moveDir * dashAmount;
 
             RaycastHit2D raycastHit2d = Physics2D.Raycast(transform.position, moveDir, dashAmount, dashLayerMask);
